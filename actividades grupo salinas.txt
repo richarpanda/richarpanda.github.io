@@ -1,4 +1,4 @@
-Se crearon aplicaciones web para las tiendas Elektra como sistemas para gestión de empleados y asignacion de permisos a maquinas de la tienda
-de acuerdo a diferentes reglas de negocio; control de logueo de usuarios de tienda por medio de huella digital;  .
+Se crearon aplicaciones web para las tiendas Elektra como sistemas para gestiÃ³n de empleados y asignacion de permisos a maquinas de la tienda
+de acuerdo a diferentes reglas de negocio; control de logueo de usuarios de tienda por medio de huella digital;  alta, baja y cambios de empleados.
 Se crearon aplicacion web centrales para automatizacion de procesos que utilizaban otras areas de la empresa como sistemas para dar de baja 
-empleados de una tienda que fue cerrada; sistemas web de monitoreo de servicios que se encontraban en las tiendas; 
+empleados de una tienda que fue cerrada; sistemas web de monitoreo de servicios que se encontraban en las tiendas; sistemas web pars envios de documentos a tienda.
