@@ -14642,57 +14642,57 @@ a.btn-slider:hover {
 /* mdb carousel */
 
 /* Carousel styling */
-#de-carousel,
-#de-carousel .carousel-inner,
-#de-carousel .carousel-item,
-#de-carousel .carousel-item.active {
+#section-la10,
+#section-la10 .carousel-inner,
+#section-la10 .carousel-item,
+#section-la10 .carousel-item.active {
     height: 100vh;
 }
 
-/* #de-carousel img {
+/* #section-la10 img {
     height: 5000px !important;
 } */
 
-#de-carousel .carousel-item:nth-child(1) {
+#section-la10 .carousel-item:nth-child(1) {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
 }
 
-#de-carousel .carousel-item:nth-child(2) {
+#section-la10 .carousel-item:nth-child(2) {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
 }
 
-#de-carousel .carousel-item:nth-child(3) {
+#section-la10 .carousel-item:nth-child(3) {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
 }
 
-#de-carousel .carousel-control-prev-icon:after {
+#section-la10 .carousel-control-prev-icon:after {
     content: '\f104';
     font-family: "FontAwesome";
 }
 
-#de-carousel .carousel-control-next-icon:after {
+#section-la10 .carousel-control-next-icon:after {
     content: '\f105';
     font-family: "FontAwesome";
 }
 
-#de-carousel .carousel-indicators [data-mdb-target] {
+#section-la10 .carousel-indicators [data-mdb-target] {
     width: 8px;
     height: 8px;
     margin: 0 6px;
 }
 
-#de-carousel .mask {
+#section-la10 .mask {
     background: rgba(30, 30, 30, 0);
 }
 
-#de-carousel .carousel-control-next,
-#de-carousel .carousel-control-prev {
+#section-la10 .carousel-control-next,
+#section-la10 .carousel-control-prev {
     width: 100px;
 }
 
@@ -16311,14 +16311,18 @@ img {
 }
 
 .background-fixed::before {
-    content: ''; /* Agrega un elemento pseudo-elemento */
-    position: absolute; /* Posiciona el elemento de manera absoluta */
+    content: '';
+    /* Agrega un elemento pseudo-elemento */
+    position: absolute;
+    /* Posiciona el elemento de manera absoluta */
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Color negro semitransparente */
-    z-index: 0; /* Coloca la capa encima del fondo de imagen */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Color negro semitransparente */
+    z-index: 0;
+    /* Coloca la capa encima del fondo de imagen */
 }
 
 .collage-container {
@@ -16377,11 +16381,45 @@ img {
         linear-gradient(-60.5deg, #fff0 0 49.5%, var(--c5) 0 50.5%, #fff0 0 100%) var(--gp),
         conic-gradient(from -90deg at 50% 50%, var(--c5) 0 32deg, var(--c3) 0 60.5deg, var(--c4) 0 90deg, var(--c5) 0 119.5deg, var(--c1) 0 148deg, var(--c5) 0 180deg, #fff0 0 360deg) var(--gp),
         conic-gradient(from 90deg at 50% 50%, var(--c2) 0 32deg, var(--c4) 0 60.5deg, var(--c3) 0 90deg, var(--c1) 0 119.5deg, var(--c5) 0 148deg, var(--c2) 0 180deg, #fff0 0 360deg) var(--gp) !important;
-
-    /* Fondo fijo */
     background-attachment: fixed !important;
+    position: relative;
+    overflow: auto;
+}
 
-    /* Estilos adicionales para la sección */
-    position: relative; /* Asegura que los hijos se posicionen correctamente */
-    overflow: auto; /* Permite desplazamiento del contenido */
+
+.flip-card {
+    width: 100%;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    margin: 0 auto;
+}
+
+.flip-card-back {
+    position: absolute;
+    background-color: #bf8d3a;
+    backface-visibility: hidden;
+    width: 75%;
+    height: 80%;
+    top: 10%;
+    left: 50%;
+    border-radius: 100%;
+    transform: translateX(-50%) rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0 20px;
+}
+
+.flip-card-back p {
+    font-size: 14px;
+    text-align: center;
+    margin-bottom: 20px;
 }
