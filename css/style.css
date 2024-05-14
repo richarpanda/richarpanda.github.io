@@ -16279,7 +16279,11 @@ img {
     max-width: 100%;
     box-sizing: border-box;
     overflow: hidden;
-    background-color: rgba(191, 141, 58, 0.05);
+    background-color: rgba(191, 141, 58, 0.06);
+}
+
+.box-line-outer h1 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
 }
 
 .logoFamilyLa10 {
@@ -16422,4 +16426,15 @@ img {
     font-size: 14px;
     text-align: center;
     margin-bottom: 20px;
+}
+
+
+/* Estilo adicional para el video dentro de la sección */
+#section-la10 video {
+    /* Establece una posición más alta */
+    position: relative;
+    top: 400px !important; /* Ajusta la cantidad de desplazamiento hacia arriba */
+    /* Ajusta el tamaño del video si es necesario */
+    width: 80%; /* O el ancho que desees */
+    height: auto; /* Ajusta la altura proporcionalmente */
 }
