@@ -16438,6 +16438,10 @@ img {
 
 
 @media only screen and (max-width: 1020px) {
+    .logo-header {
+        margin-top: -25px;
+    }
+
     #section-la10 video {
         position: relative;
         top: -100px !important;
