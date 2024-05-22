@@ -16359,17 +16359,17 @@ img {
 
 .black-pattern {
     --u: 0.25vmin !important;
-    --c1: #363636 !important;
-    --c2: #463415 !important;
-    --c3: #3e2e13 !important;
-    --c4: #121212 !important;
-    --c5: #050505 !important;
+    --c1: #404040 !important; /* Oscurecido pero no tanto */
+    --c2: #4a3325 !important; /* Oscurecido pero no tanto */
+    --c3: #3e2e21 !important; /* Oscurecido pero no tanto */
+    --c4: #1f1f1f !important; /* Oscurecido pero no tanto */
+    --c5: #141414 !important; /* Oscurecido pero no tanto */
     --gp: 50%/calc(var(--u) * 10) calc(var(--u) * 17.67) !important;
 
     /* Añade superposición para oscurecer el patrón */
     background:
-        /* Gradient oscurecido (más oscuro) */
-        linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)),
+        /* Gradient oscurecido (menos oscuro) */
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
         /* El patrón original */
         conic-gradient(from 90deg at 99% 67%, var(--c5) 0 90deg, #fff0 0 360deg) var(--gp),
         conic-gradient(from 180deg at 1% 67%, var(--c5) 0 90deg, #fff0 0 360deg) var(--gp),
@@ -16389,6 +16389,8 @@ img {
     position: relative;
     overflow: auto;
 }
+
+
 
 
 .flip-card {
@@ -16448,4 +16450,31 @@ img {
         width: 80%;
         height: auto;
     }
+}
+
+.hover-effect:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s;
+}
+
+.btn-animated {
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+}
+
+.btn-animated::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.5s;
+}
+
+.btn-animated:hover::after {
+    transform: translate(-50%, -50%) scale(1);
 }
