@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="es-Mx">
 
 <head>
     <title>Centro de Espectaculos La "10"</title>
@@ -54,7 +54,7 @@
                             <div class="de-flex-col header-col-mid">
                                 <ul id="mainmenu">
                                     <li><a href="index.html#section-la10">Inicio</a></li>
-                                    
+
                                     <li><a href="index.html#section-sucursales">Sucursales</a></li>
                                     <li><a href="index.html#section-galeria">Galeria</a></li>
                                     <li><a href="eventos.html">Eventos</a></li>
@@ -142,26 +142,77 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-4 col-md-6 mb20 hover-effect">
-                            <div class="de-event-item">
-                                <div class="d-content">
-                                    <div class="d-image">
-                                        <span class="d-image-wrap">
-                                            <img alt="" src="images/la10/events/evento1.jpeg" class="lazy"></span>
-                                        <span class="d-date">
-                                            <span class="d-mm">Nov</span>
-                                            <span class="d-dd">28</span>
-                                        </span>
-                                    </div>
-                                    <div class="d-text">
-                                        <h4>8 Aniversario La 10 Manzanillo</h4>
-                                    </div>
+                        <div class="col-md-3 video-thumbnail" onclick="loadVideo('video/video_1.mp4')"
+                            data-bs-toggle="modal" data-bs-target="#videoModal">
+                            <img src="images/la10/events/evento1.jpeg" alt="Video 1">
+                            <span class="play-button-2">&#9658;</span>
+                        </div>
+                        <div class="col-md-3 video-thumbnail" onclick="loadVideo('video/video_2.mp4')"
+                            data-bs-toggle="modal" data-bs-target="#videoModal">
+                            <img src="images/la10/events/evento1.jpeg" alt="Video 2">
+                            <span class="play-button-2">&#9658;</span>
+                        </div>
+                        <div class="col-md-3 video-thumbnail" onclick="loadVideo('video/video_3.mp4')"
+                            data-bs-toggle="modal" data-bs-target="#videoModal">
+                            <img src="images/la10/events/evento1.jpeg" alt="Video 3">
+                            <span class="play-button-2">&#9658;</span>
+                        </div>
+                        
+                        <div class="col-md-3 video-thumbnail" onclick="loadVideo('video/video_4.mp4')"
+                            data-bs-toggle="modal" data-bs-target="#videoModal">
+                            <img src="images/la10/events/evento1.jpeg" alt="Video 3">
+                            <span class="play-button-2">&#9658;</span>
+                        </div>
+
+                        <div class="col-md-3 video-thumbnail" onclick="loadVideo('video/video_5.mp4')"
+                            data-bs-toggle="modal" data-bs-target="#videoModal">
+                            <img src="images/la10/events/evento1.jpeg" alt="Video 3">
+                            <span class="play-button-2">&#9658;</span>
+                        </div>
+
+                        <div class="col-md-3 video-thumbnail" onclick="loadVideo('video/video_6.mp4')"
+                            data-bs-toggle="modal" data-bs-target="#videoModal">
+                            <img src="images/la10/events/evento1.jpeg" alt="Video 3">
+                            <span class="play-button-2">&#9658;</span>
+                        </div>
+
+                        <div class="col-md-3 video-thumbnail" onclick="loadVideo('video/video_7.mp4')"
+                            data-bs-toggle="modal" data-bs-target="#videoModal">
+                            <img src="images/la10/events/evento1.jpeg" alt="Video 3">
+                            <span class="play-button-2">&#9658;</span>
+                        </div>
+
+                        <div class="col-md-3 video-thumbnail" onclick="loadVideo('video/video_8.mp4')"
+                            data-bs-toggle="modal" data-bs-target="#videoModal">
+                            <img src="images/la10/events/evento1.jpeg" alt="Video 3">
+                            <span class="play-button-2">&#9658;</span>
+                        </div>
+                    </div>
+
+
+                    <!-- Video Modal -->
+                    <div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="videoModalLabel">Reproduciendo Video</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <video controls id="main-video" class="w-100">
+                                        <source src="" type="video/mp4">
+                                        Tu navegador no soporta la etiqueta de video.
+                                    </video>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="de-gradient-edge-bottom"></div>
+
+
+                <div class="de-gradient-edge-bottom mt-4"></div>
             </section>
 
             <!-- Sucursales -->
@@ -180,7 +231,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-4 mt-1" onclick="flipCard(this)">
+                        <div class="col-md-3 mt-1" onclick="flipCard(this)">
                             <div class="flip-card">
                                 <div class="flip-card-inner">
                                     <div class="flip-card-front de-image-text s2 wow flipInY">
@@ -197,7 +248,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-4 mt-1" onclick="flipCard(this)">
+                        <div class="col-md-3 mt-1" onclick="flipCard(this)">
                             <div class="flip-card">
                                 <div class="flip-card-inner">
                                     <div class="flip-card-front de-image-text s2 wow flipInY">
@@ -215,12 +266,12 @@
                             </div>
                         </div>
 
-                        <div class="col-md-4 mt-1" onclick="flipCard(this)">
+                        <div class="col-md-3 mt-1" onclick="flipCard(this)">
                             <div class="flip-card">
                                 <div class="flip-card-inner">
                                     <div class="flip-card-front de-image-text s2 wow flipInY">
                                         <img src="images/la10/10Mazatlan.png" class="img-fluid" alt="La10Morelia"
-                                    style="width: 90%;">
+                                            style="width: 90%;">
                                     </div>
                                     <div class="flip-card-back">
                                         <h4>Mazatlán</h4>
@@ -232,12 +283,8 @@
                                 </div>
                             </div>
                         </div>
-
                         
-                    </div>
-
-                    <div class="row g-custom-x align-items-center mt-4">
-                        <div class="col-md-4 mt-1" onclick="flipCard(this)">
+                        <div class="col-md-3 mt-1" onclick="flipCard(this)">
                             <div class="flip-card">
                                 <div class="flip-card-inner">
                                     <div class="flip-card-front de-image-text s2 wow flipInY">
@@ -254,11 +301,15 @@
                             </div>
                         </div>
 
-                        <div class="col-md-4 mt-1" onclick="flipCard(this)">
+                    </div>
+
+                    <div class="row g-custom-x align-items-center mt-4">
+                        <div class="col-md-3 mt-1" onclick="flipCard(this)">
                             <div class="flip-card">
                                 <div class="flip-card-inner">
                                     <div class="flip-card-front de-image-text s2 wow flipInY">
-                                        <img src="images/la10/10PuertoVallarta.png" class="img-fluid" alt="La10PuertoVallarta">
+                                        <img src="images/la10/10PuertoVallarta.png" class="img-fluid"
+                                            alt="La10PuertoVallarta">
                                     </div>
                                     <div class="flip-card-back">
                                         <h4>Puerto Vallarta</h4>
@@ -271,15 +322,17 @@
                             </div>
                         </div>
 
-                        <div class="col-md-4 mt-1" onclick="flipCard(this)">
+                        <div class="col-md-3 mt-1" onclick="flipCard(this)">
                             <div class="flip-card">
                                 <div class="flip-card-inner">
                                     <div class="flip-card-front de-image-text s2 wow flipInY">
-                                        <img src="images/la10/10vallarta.png" class="img-fluid" alt="La10PuertoVallarta">
+                                        <img src="images/la10/10vallarta.png" class="img-fluid"
+                                            alt="La10PuertoVallarta">
                                     </div>
                                     <div class="flip-card-back">
                                         <h4>Puerto Vallarta Politecnico</h4>
-                                        <p>Privada Politécnico Nacional 536, Colonia Agua Zarca, Puerto Vallarta, Jalisco</p>
+                                        <p>Privada Politécnico Nacional 536, Colonia Agua Zarca, Puerto Vallarta,
+                                            Jalisco</p>
                                         <a href="contactoVallartaPolitecnico.html">
                                             <button class="btn btn-warning btn-animated">Ver mas...</button>
                                         </a>
@@ -288,7 +341,7 @@
                             </div>
                         </div>
 
-                        <div class="col-md-4 mt-1" onclick="flipCard(this)">
+                        <div class="col-md-3 mt-1" onclick="flipCard(this)">
                             <div class="flip-card">
                                 <div class="flip-card-inner">
                                     <div class="flip-card-front de-image-text s2 wow flipInY">
@@ -411,12 +464,17 @@
                                 </div>
                                 <div class="de-flex-col">
                                     <div class="social-icons">
-                                        <a href="https://www.facebook.com/la10oficial"><i class="fa fa-facebook fa-lg"></i></a>
-                                        <a href="https://www.instagram.com/familyla10/?igsh=MWxuc2M2OXRjOHZoNw%3D%3D&utm_source=qr"><i class="fa fa-instagram fa-lg"></i></a>
+                                        <a href="https://www.facebook.com/la10oficial"><i
+                                                class="fa fa-facebook fa-lg"></i></a>
+                                        <a
+                                            href="https://www.instagram.com/familyla10/?igsh=MWxuc2M2OXRjOHZoNw%3D%3D&utm_source=qr"><i
+                                                class="fa fa-instagram fa-lg"></i></a>
                                         <a href="https://www.tiktok.com/@familyla10?_t=8m0RirKzVt0&_r=1">
-                                            <img src="images/tiktok.svg" alt="tiktok" style="width: 34px; height: 35px; background-color: #bf8d3a; color: #ffffff; padding: 9px;"/>
+                                            <img src="images/tiktok.svg" alt="tiktok"
+                                                style="width: 34px; height: 35px; background-color: #bf8d3a; color: #ffffff; padding: 9px;" />
                                         </a>
-                                        <a href="https://x.com/i/flow/login?redirect_after_login=%2Ffamilyla10"><i class="fa fa-twitter fa-lg"></i></a>
+                                        <a href="https://x.com/i/flow/login?redirect_after_login=%2Ffamilyla10"><i
+                                                class="fa fa-twitter fa-lg"></i></a>
                                     </div>
                                 </div>
                             </div>
@@ -551,6 +609,20 @@
             var cardInner = card.querySelector('.flip-card-inner');
             cardInner.style.transform = 'rotateY(180deg)';
         }
+
+        function loadVideo(videoSrc) {
+            const videoPlayer = document.getElementById('main-video');
+            videoPlayer.querySelector('source').src = videoSrc;
+            videoPlayer.load();
+            videoPlayer.play();
+        }
+
+        // Detener el video cuando se cierra el modal
+        document.getElementById('videoModal').addEventListener('hidden.bs.modal', function () {
+            const videoPlayer = document.getElementById('main-video');
+            videoPlayer.pause();
+            videoPlayer.currentTime = 0;
+        });
 
     </script>
 </body>

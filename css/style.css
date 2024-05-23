@@ -16359,17 +16359,22 @@ img {
 
 .black-pattern {
     --u: 0.25vmin !important;
-    --c1: #404040 !important; /* Oscurecido pero no tanto */
-    --c2: #4a3325 !important; /* Oscurecido pero no tanto */
-    --c3: #3e2e21 !important; /* Oscurecido pero no tanto */
-    --c4: #1f1f1f !important; /* Oscurecido pero no tanto */
-    --c5: #141414 !important; /* Oscurecido pero no tanto */
+    --c1: #404040 !important;
+    /* Oscurecido pero no tanto */
+    --c2: #4a3325 !important;
+    /* Oscurecido pero no tanto */
+    --c3: #3e2e21 !important;
+    /* Oscurecido pero no tanto */
+    --c4: #1f1f1f !important;
+    /* Oscurecido pero no tanto */
+    --c5: #141414 !important;
+    /* Oscurecido pero no tanto */
     --gp: 50%/calc(var(--u) * 10) calc(var(--u) * 17.67) !important;
 
     /* Añade superposición para oscurecer el patrón */
     background:
         /* Gradient oscurecido (menos oscuro) */
-        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)),
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)),
         /* El patrón original */
         conic-gradient(from 90deg at 99% 67%, var(--c5) 0 90deg, #fff0 0 360deg) var(--gp),
         conic-gradient(from 180deg at 1% 67%, var(--c5) 0 90deg, #fff0 0 360deg) var(--gp),
@@ -16389,9 +16394,6 @@ img {
     position: relative;
     overflow: auto;
 }
-
-
-
 
 .flip-card {
     width: 100%;
@@ -16477,4 +16479,49 @@ img {
 
 .btn-animated:hover::after {
     transform: translate(-50%, -50%) scale(1);
+}
+
+#video-gallery {
+    text-align: center;
+}
+
+.video-thumbnail {
+    position: relative;
+    display: inline-block;
+    margin: 10px auto;
+    cursor: pointer;
+}
+
+.video-thumbnail img {
+    width: 100%;
+    max-width: 300px;
+    transition: transform 0.3s ease-in-out;
+    
+}
+
+.video-thumbnail img:hover {
+    transform: scale(1.05);
+}
+
+.play-button-2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    color: white;
+    text-shadow: 2px 2px 4px #000;
+
+    border-radius: 60px;
+    -moz-border-radius: 60px;
+    -webkit-border-radius: 60px;
+    color: #fff;
+    text-decoration: none;
+    border: solid 5px rgba(255, 255, 255);
+    display: inline-block;
+    text-align: center;
+    width: 80px;
+    height: 80px;
+    padding-top: 22px;
+    padding-left: 5px;
 }
