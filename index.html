@@ -142,50 +142,91 @@
                             </div>
                         </div>
 
-                        <div class="col-md-3 video-thumbnail" onclick="loadVideo('video/video_1.mp4')"
-                            data-bs-toggle="modal" data-bs-target="#videoModal">
-                            <img src="images/la10/events/evento1.jpeg" alt="Video 1">
-                            <span class="play-button-2">&#9658;</span>
+                        <div class="col-lg-3 col-md-6 mb20 mx-auto">
+                            <div class="de-event-item">
+                                <div class="d-content">
+                                    <div class="d-image">
+                                        <span class="d-image-wrap"><img alt="" src="images/la10/events/evento1.jpeg"
+                                                class="lazy"></span>
+                                        <span class="d-date">
+                                            <span class="d-mm">Jun</span>
+                                            <span class="d-dd">8</span>
+                                        </span>
+                                    </div>
+                                    <div class="d-text">
+                                        <a href="#">
+                                            <h4>8 Aniversario La 10 Manzanillo</h4>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-3 video-thumbnail" onclick="loadVideo('video/video_2.mp4')"
-                            data-bs-toggle="modal" data-bs-target="#videoModal">
-                            <img src="images/la10/events/evento1.jpeg" alt="Video 2">
+                    </div>
+
+                    <div class="row">
+                        <!-- Repeat this block for each video -->
+                        <div class="col-md-3 video-thumbnail" data-video-src="video/Video_1.mp4">
+                            <img src="images/thumbnails/thumbnail_video_1.jpg" alt="Video 1" class="thumbnailImage">
                             <span class="play-button-2">&#9658;</span>
-                        </div>
-                        <div class="col-md-3 video-thumbnail" onclick="loadVideo('video/video_3.mp4')"
-                            data-bs-toggle="modal" data-bs-target="#videoModal">
-                            <img src="images/la10/events/evento1.jpeg" alt="Video 3">
-                            <span class="play-button-2">&#9658;</span>
-                        </div>
-                        
-                        <div class="col-md-3 video-thumbnail" onclick="loadVideo('video/video_4.mp4')"
-                            data-bs-toggle="modal" data-bs-target="#videoModal">
-                            <img src="images/la10/events/evento1.jpeg" alt="Video 3">
-                            <span class="play-button-2">&#9658;</span>
+                            <video class="videoElement" style="display:none;">
+                                <source src="video/Video_1.mp4" type="video/mp4">
+                            </video>
                         </div>
 
-                        <div class="col-md-3 video-thumbnail" onclick="loadVideo('video/video_5.mp4')"
-                            data-bs-toggle="modal" data-bs-target="#videoModal">
-                            <img src="images/la10/events/evento1.jpeg" alt="Video 3">
+                        <div class="col-md-3 video-thumbnail" data-video-src="video/Video_2.mp4">
+                            <img src="images/thumbnails/thumbnail_video_2.jpg" alt="Video 2" class="thumbnailImage">
                             <span class="play-button-2">&#9658;</span>
+                            <video class="videoElement" style="display:none;">
+                                <source src="video/Video_2.mp4" type="video/mp4">
+                            </video>
                         </div>
 
-                        <div class="col-md-3 video-thumbnail" onclick="loadVideo('video/video_6.mp4')"
-                            data-bs-toggle="modal" data-bs-target="#videoModal">
-                            <img src="images/la10/events/evento1.jpeg" alt="Video 3">
+                        <div class="col-md-3 video-thumbnail" data-video-src="video/Video_3.mp4">
+                            <img src="images/thumbnails/thumbnail_Video_3.jpg" alt="Video 2" class="thumbnailImage">
                             <span class="play-button-2">&#9658;</span>
+                            <video class="videoElement" style="display:none;">
+                                <source src="video/Video_3.mp4" type="video/mp4">
+                            </video>
                         </div>
 
-                        <div class="col-md-3 video-thumbnail" onclick="loadVideo('video/video_7.mp4')"
-                            data-bs-toggle="modal" data-bs-target="#videoModal">
-                            <img src="images/la10/events/evento1.jpeg" alt="Video 3">
+                        <div class="col-md-3 video-thumbnail" data-video-src="video/Video_4.mp4">
+                            <img src="images/thumbnails/thumbnail_Video_4.jpg" alt="Video 2" class="thumbnailImage">
                             <span class="play-button-2">&#9658;</span>
+                            <video class="videoElement" style="display:none;">
+                                <source src="video/Video_4.mp4" type="video/mp4">
+                            </video>
                         </div>
 
-                        <div class="col-md-3 video-thumbnail" onclick="loadVideo('video/video_8.mp4')"
-                            data-bs-toggle="modal" data-bs-target="#videoModal">
-                            <img src="images/la10/events/evento1.jpeg" alt="Video 3">
+                        <div class="col-md-3 video-thumbnail" data-video-src="video/Video_5.mp4">
+                            <img src="images/thumbnails/thumbnail_video_5.jpg" alt="Video 5" class="thumbnailImage">
                             <span class="play-button-2">&#9658;</span>
+                            <video class="videoElement" style="display:none;">
+                                <source src="video/Video_5.mp4" type="video/mp4">
+                            </video>
+                        </div>
+
+                        <div class="col-md-3 video-thumbnail" data-video-src="video/Video_6.mp4">
+                            <img src="images/thumbnails/thumbnail_Video_6.jpg" alt="Video 5" class="thumbnailImage">
+                            <span class="play-button-2">&#9658;</span>
+                            <video class="videoElement" style="display:none;">
+                                <source src="video/Video_6.mp4" type="video/mp4">
+                            </video>
+                        </div>
+
+                        <div class="col-md-3 video-thumbnail" data-video-src="video/Video_7.mp4">
+                            <img src="images/thumbnails/thumbnail_Video_7.jpg" alt="Video 5" class="thumbnailImage">
+                            <span class="play-button-2">&#9658;</span>
+                            <video class="videoElement" style="display:none;">
+                                <source src="video/Video_7.mp4" type="video/mp4">
+                            </video>
+                        </div>
+
+                        <div class="col-md-3 video-thumbnail" data-video-src="video/Video_8.mp4">
+                            <img src="images/thumbnails/thumbnail_Video_8.jpg" alt="Video 5" class="thumbnailImage">
+                            <span class="play-button-2">&#9658;</span>
+                            <video class="videoElement" style="display:none;">
+                                <source src="video/Video_8.mp4" type="video/mp4">
+                            </video>
                         </div>
                     </div>
 
@@ -283,7 +324,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="col-md-3 mt-1" onclick="flipCard(this)">
                             <div class="flip-card">
                                 <div class="flip-card-inner">
@@ -446,11 +487,104 @@
                     </div>
                 </div>
             </section>
+
         </div>
         <!-- content close -->
         <a href="#" id="back-to-top"></a>
         <!-- footer begin -->
         <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <form name="contactForm" id='contact_form' class="form-border" method="post">
+                            <div class="row g-custom-x">
+                                <div class="col-md-12">
+                                    <h3>Envianos un mensaje</h3>
+                                </div>
+                                <div class="col-md-6">
+                                    <div id='name_error' class='error'>Por favor ingresa tu nombre</div>
+                                    <div>
+                                        <input type='text' name='Name' id='name' class="form-control"
+                                            placeholder="Tu nombre" required>
+                                    </div>
+
+                                    <div id='email_error' class='error'>Por favor ingresa un Email valido</div>
+                                    <div>
+                                        <input type='email' name='Email' id='email' class="form-control"
+                                            placeholder="Tu correo" required>
+                                    </div>
+
+                                    <div id='phone_error' class='error'>Por favor ingresa tu numero de telefono
+                                    </div>
+                                    <div>
+                                        <input type='text' name='phone' id='phone' class="form-control"
+                                            placeholder="Tu telefono" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div id='message_error' class='error'>Por favor ingresa un mensaje</div>
+                                    <div>
+                                        <textarea name='message' id='message' class="form-control"
+                                            placeholder="Mensaje" required></textarea>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="g-recaptcha" data-sitekey="copy-your-site-key-here"></div>
+                                    <p id='submit' class="mt20">
+                                        <input type='submit' id='send_message' value='Enviar' class="btn btn-main">
+                                    </p>
+                                    <div id='mail_success' class='success'>Tu mensaje fue enviado exitosamente.
+                                    </div>
+                                    <div id='mail_fail' class='error'>Lo sentimos, ocurrio un error al enviar el
+                                        mensaje.</div>
+
+                                </div>
+                            </div>
+                        </form>
+
+                        <div id="success_message" class='success'>
+                            Tu mensaje fue enviado exitosamente. Refresca esta pagina si quieres enviar mas
+                            mensajes.
+                        </div>
+                        <div id="error_message" class='error'>
+                            Lo siento hubo un error enviando tu formulario
+                        </div>
+
+                    </div>
+                    
+                    <div class="col-md-2 col-sm-6 col-xs-1">
+                        <div class="widget">
+                            <h5>Informacion de contacto</h5>
+                            <address class="s1">
+                                <span><i class="id-color fa fa-phone fa-lg"></i>+525548282946</span>
+                            </address>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-6 col-xs-1">
+                        <div class="widget">
+                            <h5>Sucursales</h5>
+                            <ul>
+                                <li><a href="contactoEcatepec.html">Ecatepec</a></li>
+                                <li><a href="contactoManzanillo.html">Manzanillo</a></li>
+                                <li><a href="contactoMazatlan.html">Mazatlan</a></li>
+                                <li><a href="contactoMorelia.html">Morelia</a></li>
+                                <li><a href="contactoPuertoVallarta.html">Puerto Vallarta</a></li>
+                                <li><a href="contactoVallartaPolitecnico.html">Vallarta Politecnico</a></li>
+                                <li><a href="contactoTecamac.html">Tecamac</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2 col-sm-6 col-xs-1">
+                        <div class="widget">
+                            <h5>Proximos Eventos</h5>
+                            <ul>
+                                <li><a href="eventos.html">Aniversario Manzanillo</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div class="subfooter">
                 <div class="container">
                     <div class="row">
@@ -487,8 +621,8 @@
     </div>
     <!-- Javascript Files
     ================================================== -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/wow.min.js"></script>
     <script src="js/jquery.isotope.min.js"></script>
@@ -524,10 +658,6 @@
                 buttonText: "Acepto",
             });
         });
-    </script>
-
-
-    <script>
 
         document.addEventListener("DOMContentLoaded", function () {
             const collageContainer = document.querySelector(".collage-container");
@@ -622,6 +752,36 @@
             const videoPlayer = document.getElementById('main-video');
             videoPlayer.pause();
             videoPlayer.currentTime = 0;
+        });
+
+        var videoThumbnails = document.querySelectorAll('.video-thumbnail');
+
+        videoThumbnails.forEach(thumbnail => {
+            var video = thumbnail.querySelector('.videoElement');
+            var canvas = document.createElement('canvas');
+            var context = canvas.getContext('2d');
+            var thumbnailImage = thumbnail.querySelector('.thumbnailImage');
+
+            video.addEventListener('loadeddata', () => {
+                video.currentTime = 5;
+            });
+
+            video.addEventListener('seeked', () => {
+                canvas.width = video.videoWidth;
+                canvas.height = video.videoHeight;
+                context.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+                var dataURL = canvas.toDataURL('image/jpeg');
+                thumbnailImage.src = dataURL;
+            });
+
+            video.load();
+
+            thumbnail.addEventListener('click', () => {
+                thumbnailImage.style.display = 'none';
+                thumbnail.querySelector('.play-button-2').style.display = 'none';
+                video.style.display = 'block';
+                video.play();
+            });
         });
 
     </script>
