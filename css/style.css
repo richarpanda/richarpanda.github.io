@@ -16446,6 +16446,13 @@ img {
     .logo-header {
         margin-top: -25px;
     }
+
+    #section-sucursales video {
+        position: relative;
+        top: -800px !important;
+        width: 80%;
+        height: auto;
+    }
 }
 
 .hover-effect:hover {
