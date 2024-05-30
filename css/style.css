@@ -16396,6 +16396,8 @@ img {
 }
 
 .flip-card {
+    background-color: rgba(0,0,0, 0.3);
+    border-radius: 1000%;
     width: 100%;
 }
 
@@ -16435,7 +16437,6 @@ img {
 
 #section-la10 video {
     position: relative;
-    top: 400px !important;
     width: 80%;
     height: auto;
 }
@@ -16444,13 +16445,6 @@ img {
 @media only screen and (max-width: 1020px) {
     .logo-header {
         margin-top: -25px;
-    }
-
-    #section-la10 video {
-        position: relative;
-        top: -100px !important;
-        width: 80%;
-        height: auto;
     }
 }
 

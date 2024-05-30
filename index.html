@@ -78,28 +78,9 @@
 
             <!-- Carousel wrapper -->
             <section id="section-la10" class="jarallax no-top no-bottom carousel slide carousel-fade shadow-2-strong"
-                data-mdb-ride="carousel" data-video-src="mp4:video/la10Bienvenida.mov">
+                data-mdb-ride="carousel" data-video-src="mp4:video/LA10Inferno.mp4">
                 <div class="overlay60">
-                    <div class="carousel-inner z1000">
-                        <div class="carousel-item active">
-                            <div class="mask">
-                                <div class="d-flex justify-content-center align-items-center h-100">
-                                    <div class="container text-white text-center">
-                                        <div class="row">
-                                            <div class="col-md-6 offset-md-3">
-                                                <div class="box-line-outer wow flipInX">
-                                                    <h1 class="ultra-big mb-3 wow fadeInUp">
-                                                        <img src="images/la10/logoFamilyNoCircle.png"
-                                                            class="logoFamilyLa10" alt="familyLa10" />
-                                                    </h1>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
                 <div class="de-gradient-edge-bottom"></div>
             </section>
@@ -251,13 +232,11 @@
                         </div>
                     </div>
                 </div>
-
-
-                <div class="de-gradient-edge-bottom mt-4"></div>
             </section>
 
             <!-- Sucursales -->
-            <section id="section-sucursales" class="black-pattern gradient-section">
+            <section id="section-sucursales" class="gradient-section jarallax" data-mdb-ride="carousel"
+                data-video-src="mp4:video/Fondo10.mp4">
                 <div class="de-gradient-edge-top"></div>
                 <div class="container">
                     <div class="row g-custom-x align-items-center mb-2">
@@ -400,6 +379,8 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="de-gradient-edge-bottom" style="margin-top: 500px !important;"></div>
             </section>
 
             <!-- Galeria -->
@@ -524,8 +505,8 @@
                                 <div class="col-md-6">
                                     <div id='message_error' class='error'>Por favor ingresa un mensaje</div>
                                     <div>
-                                        <textarea name='message' id='message' class="form-control"
-                                            placeholder="Mensaje" required></textarea>
+                                        <textarea name='message' id='message' class="form-control" placeholder="Mensaje"
+                                            required></textarea>
                                     </div>
                                 </div>
 
@@ -552,7 +533,7 @@
                         </div>
 
                     </div>
-                    
+
                     <div class="col-md-2 col-sm-6 col-xs-1">
                         <div class="widget">
                             <h5>Informacion de contacto</h5>
@@ -740,49 +721,45 @@
             cardInner.style.transform = 'rotateY(180deg)';
         }
 
-        function loadVideo(videoSrc) {
-            const videoPlayer = document.getElementById('main-video');
-            videoPlayer.querySelector('source').src = videoSrc;
-            videoPlayer.load();
-            videoPlayer.play();
-        }
+        document.addEventListener('DOMContentLoaded', function () {
+            const videoThumbnails = document.querySelectorAll('.video-thumbnail');
+            const mainVideo = document.getElementById('main-video');
+            const videoModal = new bootstrap.Modal(document.getElementById('videoModal'));
 
-        // Detener el video cuando se cierra el modal
-        document.getElementById('videoModal').addEventListener('hidden.bs.modal', function () {
-            const videoPlayer = document.getElementById('main-video');
-            videoPlayer.pause();
-            videoPlayer.currentTime = 0;
-        });
+            videoThumbnails.forEach(thumbnail => {
+                var video = thumbnail.querySelector('.videoElement');
+                var canvas = document.createElement('canvas');
+                var context = canvas.getContext('2d');
+                var thumbnailImage = thumbnail.querySelector('.thumbnailImage');
 
-        var videoThumbnails = document.querySelectorAll('.video-thumbnail');
+                video.addEventListener('loadeddata', () => {
+                    video.currentTime = 5;
+                });
 
-        videoThumbnails.forEach(thumbnail => {
-            var video = thumbnail.querySelector('.videoElement');
-            var canvas = document.createElement('canvas');
-            var context = canvas.getContext('2d');
-            var thumbnailImage = thumbnail.querySelector('.thumbnailImage');
+                video.addEventListener('seeked', () => {
+                    canvas.width = video.videoWidth;
+                    canvas.height = video.videoHeight;
+                    context.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
+                    var dataURL = canvas.toDataURL('image/jpeg');
+                    thumbnailImage.src = dataURL;
+                });
 
-            video.addEventListener('loadeddata', () => {
-                video.currentTime = 5;
+                video.load();
+
+                thumbnail.addEventListener('click', () => {
+                    const videoSrc = thumbnail.getAttribute('data-video-src');
+                    mainVideo.querySelector('source').setAttribute('src', videoSrc);
+                    mainVideo.load();
+                    videoModal.show();
+                });
             });
 
-            video.addEventListener('seeked', () => {
-                canvas.width = video.videoWidth;
-                canvas.height = video.videoHeight;
-                context.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
-                var dataURL = canvas.toDataURL('image/jpeg');
-                thumbnailImage.src = dataURL;
-            });
-
-            video.load();
-
-            thumbnail.addEventListener('click', () => {
-                thumbnailImage.style.display = 'none';
-                thumbnail.querySelector('.play-button-2').style.display = 'none';
-                video.style.display = 'block';
-                video.play();
+            document.getElementById('videoModal').addEventListener('hidden.bs.modal', function () {
+                mainVideo.pause();
+                mainVideo.currentTime = 0;
             });
         });
+
 
     </script>
 </body>
