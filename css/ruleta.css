@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+h4 {
+    text-align: center;
+    font-family: 'Lato', sans-serif !important;
+    padding: 25px;
+}
+
+#ruletaContainer {
+    position: relative;
+    display: flex;
+    width: 500px;
+    height: 500px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: linear-gradient(-147.9deg, #000000 1%, #676766 100%);
+    padding: 40px;
+}
+
+#ruletaContainer::after {
+    position: absolute;
+    background: url(https://familyla10.com/images/logogris.png) no-repeat;
+    width: 10%;
+    height: 17%;
+    z-index: 2;
+    content: "";
+    background-size: 100%;
+    top: 41%;
+    left: 44.5%;
+    opacity: .7;
+}
+
+#ruletaContainer::before {
+    position: absolute;
+    background: url(https://cdn2.hubspot.net/hubfs/3029100/Imagenes/iconos/chiriburcio.svg) no-repeat;
+    width: 20%;
+    height: 30%;
+    z-index: 2;
+    content: "";
+    background-size: 100%;
+    top: 32%;
+    left: 40%;
+    background-position: 50% 45%;
+}
+
+.fondogris {
+    background: url(https://cdn2.hubspot.net/hubfs/3029100/fondo_gris.svg) no-repeat;
+    width: 96%;
+    height: 96%;
+    position: absolute;
+    top: 2%;
+}
+
+#ruleta {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: transform 5s cubic-bezier(0.33, 1, 0.68, 1);
+}
+
+#mensaje {
+    margin-top: 20px;
+    font-size: 1.5em;
+    font-family: 'Lato', sans-serif !important;
+}
+
+
+.box-roulette {
+    position: relative;
+    width: 480px;
+    height: 480px;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.box-roulette .roulette {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.box-roulette .item {
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+    border: 0 solid transparent;
+    transform-origin: 0 100%;
+}
+
+.box-roulette .label {
+    position: absolute;
+    left: 25px;
+    top:  -80px;
+    color: #fff;;
+    white-space: nowrap;
+    transform-origin: 0 0;
+}
+
+.box-roulette .label .text {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: 'Lato', sans-serif !important;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    text-align:center;
+    line-height: 1;
+    vertical-align: middle;
+}
+
+#btn-start {
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -50px 0 0 -50px;
+    width: 100px;
+    height: 100px;
+    font-weight: bold;
+    background: transparent;
+    border: none;
+    z-index: 9999;
+    cursor: pointer;
+}
