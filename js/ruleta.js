@@ -1,154 +1,115 @@
-(function ($) {
-  $.fn.extend({
+const prizes = [
+  "SIN PREMIO",
+  "Botella para el",
+  "Sexy",
+  "Copa Dama",
+  "Copa con tu mesero",
+  "Jacuzzi",
+  "Premio de Broma",
+  "10 segundos",
+  "15 segundos",
+  "30 segundos",
+  "Botella para ella",
+  "SIN PREMIO"
+];
 
-    roulette: function (options) {
-
-      var defaults = {
-        angle: 0,
-        angleOffset: -45,
-        speed: 5000,
-        easing: "easeInOutElastic",
-      };
-
-      var opt = $.extend(defaults, options);
-
-      return this.each(function () {
-        var o = opt;
-
-        var data = [
-          {
-            color: '#333',
-            text: 'Botella para ella'
-          },
-          {
-            color: '#bf8d3a',
-            text: '⁠Botella para el'
-          },
-          {
-            color: '#333',
-            text: 'Sexy'
-          },
-          {
-            color: '#bf8d3a',
-            text: '⁠Copa Dama'
-          },
-          {
-            color: '#333',
-            text: 'Copa con tu mesero'
-          },
-          {
-            color: '#bf8d3a',
-            text: 'Jacuzzi'
-          },
-          {
-            color: '#333',
-            text: '⁠Premio de Broma'
-          },
-          {
-            color: '#bf8d3a',
-            text: 'Shot 10 segundos'
-          },
-          {
-            color: '#333',
-            text: 'Shot 20 segundos'
-          },
-          {
-            color: '#bf8d3a',
-            text: 'Shot 30 segundos'
-          },
-          {
-            color: '#ff0000',
-            text: 'Sin Premio'
-          }
-        ];
-
-        var $wrap = $(this);
-        var $btnStart = $wrap.find("#btn-start");
-        var $roulette = $wrap.find(".roulette");
-        var $mensaje = $('#mensaje');
-        var wrapW = $wrap.width();
-        var angle = o.angle;
-        var angleOffset = o.angleOffset;
-        var speed = o.speed;
-        var easing = o.easing;
-        var itemSize = data.length;
-        var itemSelector = "item";
-        var labelSelector = "label";
-        var d = 360 / itemSize;
-        var borderTopWidth = wrapW;
-        var borderRightWidth = tanDeg(d);
-
-        for (i = 1; i <= itemSize; i += 1) {
-          var idx = i - 1;
-          var rt = i * d + angleOffset;
-          var itemHTML = $('<div class="' + itemSelector + '">');
-          var labelHTML = '';
-          labelHTML += '<p class="' + labelSelector + '">';
-          labelHTML += '	<span class="text">' + data[idx].text + '<\/span>';
-          labelHTML += '<\/p>';
-
-          $roulette.append(itemHTML);
-          $roulette.children("." + itemSelector).eq(idx).append(labelHTML);
-          $roulette.children("." + itemSelector).eq(idx).css({
-            "left": wrapW / 2,
-            "top": -wrapW / 2,
-            "border-top-width": borderTopWidth,
-            "border-right-width": borderRightWidth,
-            "border-top-color": data[idx].color,
-            "transform": "rotate(" + rt + "deg)"
-          });
-
-          var textH = parseInt(((2 * Math.PI * wrapW) / d) * .5);
-
-          $roulette.children("." + itemSelector).eq(idx).children("." + labelSelector).css({
-            "height": textH + 'px',
-            "line-height": textH + 'px',
-            "transform": 'translateX(' + (textH * 1.3) + 'px) translateY(' + (wrapW * -.3) + 'px) rotateZ(' + (90 + d * .5) + 'deg)'
-          });
-
-        }
-
-        function tanDeg(deg) {
-          var rad = deg * Math.PI / 180;
-          return wrapW / (1 / Math.tan(rad));
-        }
-
-
-        $btnStart.on("click", function () {
-          rotation();
-        });
-
-        function rotation() {
-
-          var completeA = 360 * r(5, 10) + r(0, 360);
-
-          $roulette.rotate({
-            angle: angle,
-            animateTo: completeA,
-            center: ["50%", "50%"],
-            easing: $.easing.esing,
-            callback: function () {
-              var currentA = $(this).getRotateAngle();
-
-              console.log(currentA);
-
-            },
-            duration: speed
-          });
-        }
-
-
-        function r(min, max) {
-          return Math.floor(Math.random() * (max - min + 1)) + min;
-        }
-
-      });
-    }
-  });
-})(jQuery);
-
-$(function () {
-
-  $('.box-roulette').roulette();
-
+document.addEventListener("DOMContentLoaded", () => {
+  const storedPrize = localStorage.getItem("prize");
+  if (storedPrize) {
+    displayPrize(storedPrize);
+  } else {
+    enableSpin();
+  }
 });
+
+function enableSpin() {
+  const border = document.querySelector("img.border");
+  const marker = document.querySelector("img.marker");
+  const logo = document.querySelector("img.logo");
+
+  border.addEventListener("click", spinRoulette);
+  marker.addEventListener("click", spinRoulette);
+  logo.addEventListener("click", spinRoulette);
+}
+
+function disableSpin() {
+  const border = document.querySelector("img.border");
+  const marker = document.querySelector("img.marker");
+  const logo = document.querySelector("img.logo");
+
+  border.removeEventListener("click", spinRoulette);
+  marker.removeEventListener("click", spinRoulette);
+  logo.removeEventListener("click", spinRoulette);
+}
+
+function spinRoulette() {
+  disableSpin();
+
+  const roulette = document.querySelector('.roulette');
+  const randomDegree = Math.floor(Math.random() * 360) + 3600;
+  const modal = document.getElementById("myModal");
+  const winnerText = document.getElementById("winnerText");
+
+  roulette.style.transform = `rotate(${randomDegree}deg)`;
+
+  const winningAngle = randomDegree % 360;
+  const winningOption = Math.floor((360 - winningAngle + 15) % 360 / 30);
+
+  setTimeout(() => {
+    const prize = prizes[winningOption + 1];
+    console.log(winningOption + 1);
+    if (winningOption + 1 != 11 && winningOption + 1 != 12 && winningOption + 1 != 1) {
+      const winnerDiv = document.querySelector(`.roulette div:nth-child(${winningOption + 2})`);
+      winnerDiv.classList.add('winner');
+      winnerText.textContent = `¡Felicidades! Ganaste: ${prize}`;
+      modal.style.display = "flex";
+      launchConfetti();
+    }
+    else {
+      winnerText.textContent = `Lo sentimos, quedaste: ${prize == "undefined" || undefined ? "SIN PREMIO" : prize}`;
+      modal.style.display = "flex";
+    }
+    localStorage.setItem("prize", prize);
+  }, 3000);
+}
+
+function displayPrize(prize) {
+  const modal = document.getElementById("myModal");
+  const winnerText = document.getElementById("winnerText");
+
+  if (prize == "SIN PREMIO" || prize == "undefined")
+    winnerText.textContent = `Lo sentimos, quedaste: ${prize == "undefined" ? "SIN PREMIO" : prize}`;
+  else
+    winnerText.textContent = `¡Felicidades! Ganaste: ${prize}`;
+
+  modal.style.display = "flex";
+}
+
+function launchConfetti() {
+  confetti({
+    particleCount: 100,
+    spread: 70,
+    origin: { y: 0.6 }
+  });
+}
+
+document.querySelector(".close").onclick = function () {
+  document.getElementById("myModal").style.display = "none";
+}
+
+// Close the modal when clicking outside of it
+window.onclick = function (event) {
+  const modal = document.getElementById("myModal");
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+// Function to clear localStorage for testing
+function clearLocalStorage() {
+  localStorage.removeItem("prize");
+  location.reload();
+}
+
+// Add event listener to clear localStorage button (you need to add this button in your HTML)
+document.getElementById("clearLocalStorage").onclick = clearLocalStorage;

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es-Mx">
+<html lang="en">
 
 <head>
     <title>Centro de Espectaculos La "10"</title>
@@ -10,30 +10,51 @@
     <meta content="Ing. Ricardo Villa Sanchez" name="author" />
 
     <link rel="icon" href="images/favicon.ico" type="image/gif" sizes="16x16">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Poetsen+One&display=swap" rel="stylesheet">
+    <title>Ruleta de 12 Opciones</title>
     <link rel="stylesheet" href="css/ruleta.css">
-</head>
+
 </head>
 
-<body class="dark-scheme">
-    <div class="">
-        <h4>Presiona el icono de en medio para hacer girar la ruleta</h4>
-        <div id="ruletaContainer">
-            <div class="fondogris"></div>
-            <div id="ruleta">
-                <div class="box-roulette">
-                    <button type="button" id="btn-start">
-                    </button>
-                    <div class="roulette" id="roulette"></div>
-                </div>
-            </div>
+<body class="black-pattern">
+    <h2>Presiona el icono del centro para girar la ruleta </h2>
+    <div class="roulette-container">
+        <img src="images/fondo_gris.svg" class="border">
+        <img src="images/centroRuleta.svg" class="marker">
+        <img src="images/logogris.png" class="logo">
+        <div class="roulette-circle"></div>
+
+        <div class="roulette">
+            <div><span class="prize" style="font-size: 1px; color: #802828;">SIN PREMIO</span></div>
+            <div><span class="prize">Botella para el</span></div>
+            <div><span class="prize">Sexy</span></div>
+            <div><span class="prize">Copa Dama</span></div>
+            <div><span class="prize">Copa con tu mesero</span></div>
+            <div><span class="prize">Jacuzzi</span></div>
+            <div><span class="prize">Premio de Broma</span></div>
+            <div><span class="prize">10 segundos</span></div>
+            <div><span class="prize">15 segundos</span></div>
+            <div><span class="prize">30 segundos</span></div>
+            <div><span class="prize">Botella para ella</span></div>
+            <div><span class="prize">SIN PREMIO</span></div>
         </div>
-        <div id="mensaje"></div>
-
     </div>
-    <!-- partial -->
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
-    <script src='https://cdn.sobekrepository.org/includes/jquery-rotate/2.2/jquery-rotate.min.js'></script>
-    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js'></script>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="winnerText"></p>
+            <span>No cierres tu navegador</span>
+        </div>
+    </div>
+
+    <br><br><br><br>
+    <button id="clearLocalStorage">REINICIAR INTENTOS</button>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
     <script src="js/ruleta.js"></script>
 </body>
 

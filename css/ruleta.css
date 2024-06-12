@@ -1,145 +1,301 @@
-@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
-
 body {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    overflow: hidden;
+    align-items: center;
     margin: 0;
-    background: #0d0d0d;
+    padding: 0;
+    height: 100vh;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    background-color: #0d0d0d;
 }
 
-h4 {
+h2 {
+    font-family: "Poetsen One", sans-serif !important;
+    font-weight: 400 !important;
+    font-style: normal;
     text-align: center;
-    font-family: 'Lato', sans-serif !important;
-    color: #FFF;
-    letter-spacing: 0.2em;
-    padding: 25px;
+    color: #ddb985;
+    margin-bottom: 70px;
 }
 
-#ruletaContainer {
+.roulette-container {
     position: relative;
-    display: flex;
     width: 300px;
     height: 300px;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    margin-left: 10px;
-    background: linear-gradient(-147.9deg, #000000 1%, #676766 100%);
+    display: flex;
+}
+
+.roulette-circle {
+    position: absolute;
+    width: 310px;
+    height: 310px;
+    z-index: -10;
+    top: -30px;
+    left: -29px;
     padding: 30px;
-}
-
-#ruletaContainer::after {
-    position: absolute;
-    background: url(https://familyla10.com/images/logogris.png) no-repeat;
-    width: 12.5%;
-    height: 20%;
-    z-index: 2;
-    content: "";
-    background-size: 100%;
-    top: 40%;
-    left: 43.5%;
-    opacity: .7;
-}
-
-#ruletaContainer::before {
-    position: absolute;
-    background: url(https://cdn2.hubspot.net/hubfs/3029100/Imagenes/iconos/chiriburcio.svg) no-repeat;
-    width: 20%;
-    height: 30%;
-    z-index: 2;
-    content: "";
-    background-size: 100%;
-    top: 32%;
-    left: 40%;
-    background-position: 50% 45%;
-}
-
-.fondogris {
-    background: url(https://cdn2.hubspot.net/hubfs/3029100/fondo_gris.svg) no-repeat;
-    width: 96%;
-    height: 96%;
-    position: absolute;
-    top: 2%;
-}
-
-#ruleta {
-    display: flex;
-    width: 100%;
-    height: 100%;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
     border-radius: 50%;
-    overflow: hidden;
-    transition: transform 5s cubic-bezier(0.33, 1, 0.68, 1);
+    background: linear-gradient(-147.9deg, #000000 1%, #676766 100%);
 }
 
-#mensaje {
-    margin-top: 20px;
-    font-size: 1.5em;
-    font-family: 'Lato', sans-serif !important;
-}
-
-
-.box-roulette {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    border-radius: 100%;
-    overflow: hidden;
-}
-
-.box-roulette .roulette {
-    position: relative;
+.roulette {
+    position: absolute;
     width: 100%;
     height: 100%;
+    border-radius: 50%;
+    border: 5px solid #333;
     overflow: hidden;
+    transform: rotate(0deg);
+    transition: transform 3s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
-.box-roulette .item {
+img.border {
     position: absolute;
-    top: 0;
-    width: 0;
-    height: 0;
-    border: 0 solid transparent;
-    transform-origin: 0 100%;
+    left: -20px;
+    top: -20px;
+    width: 117% !important;
+    z-index: -1;
 }
 
-.box-roulette .label {
+img.marker {
     position: absolute;
-    left: 15px;
-    top:  -60px;
-    color: #fff;;
-    white-space: nowrap;
-    transform-origin: 0 0;
+    height: 80px;
+    left: 125px;
+    top: 110px;
+    z-index: 1;
 }
 
-.box-roulette .label .text {
-    display: inline-block;
-    font-size: 7px;
-    font-weight: bold;
-    font-family: 'Lato', sans-serif !important;
-    letter-spacing: 0.15em;
+img.logo {
+    position: absolute;
+    height: 60px;
+    left: 135px;
+    top: 125px;
+    z-index: 1;
+}
+
+.roulette div {
+    font-family: "Poetsen One", sans-serif !important;
+    font-weight: 400 !important;
+    font-style: normal;
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    border: 1px solid #ccc;
+    transform-origin: 100% 100%;
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 13px;
+    color: #fff;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.roulette .prize {
+    margin-left: 60px;
+    margin-top: -15px;
     text-transform: uppercase;
-    text-align:center;
-    line-height: 1;
-    vertical-align: middle;
+    transform: rotate(-125deg);
 }
 
-#btn-start {
-    display: block;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    margin: -50px 0 0 -50px;
-    width: 100px;
-    height: 100px;
-    font-weight: bold;
-    background: transparent;
+.roulette div:nth-child(1) {
+    transform: rotate(0deg);
+    background: linear-gradient(135deg, #ff0000 0%, #802828 100%);
     border: none;
-    z-index: 9999;
+}
+
+.roulette div:nth-child(2) {
+    transform: rotate(30deg);
+    background: linear-gradient(135deg, #e0951b 0%, #dbcab7 100%);
+}
+
+.roulette div:nth-child(3) {
+    transform: rotate(60deg);
+    background: linear-gradient(135deg, #000000 0%, #666666 100%);
+}
+
+.roulette div:nth-child(4) {
+    transform: rotate(90deg);
+    background: linear-gradient(135deg, #e0951b 0%, #dbcab7 100%);
+}
+
+.roulette div:nth-child(5) {
+    transform: rotate(120deg);
+    background: linear-gradient(135deg, #000000 0%, #666666 100%);
+}
+
+.roulette div:nth-child(6) {
+    transform: rotate(150deg);
+    background: linear-gradient(135deg, #e0951b 0%, #dbcab7 100%);
+}
+
+.roulette div:nth-child(7) {
+    transform: rotate(180deg);
+    background: linear-gradient(135deg, #000000 0%, #666666 100%);
+}
+
+.roulette div:nth-child(8) {
+    transform: rotate(210deg);
+    background: linear-gradient(135deg, #e0951b 0%, #dbcab7 100%);
+}
+
+.roulette div:nth-child(9) {
+    transform: rotate(240deg);
+    background: linear-gradient(135deg, #000000 0%, #666666 100%);
+}
+
+.roulette div:nth-child(10) {
+    transform: rotate(270deg);
+    background: linear-gradient(135deg, #e0951b 0%, #dbcab7 100%);
+}
+
+.roulette div:nth-child(11) {
+    transform: rotate(300deg);
+    background: linear-gradient(135deg, #000000 0%, #666666 100%);
+}
+
+.roulette div:nth-child(12) {
+    transform: rotate(330deg);
+    background: linear-gradient(135deg, #ff0000 0%, #802828 100%);
+    border: none;
+}
+
+.roulette div span {
+    transform: rotate(-15deg);
+}
+
+.label {
+    margin-top: 100px;
+    font-size: 24px;
+}
+
+.winner {
+    animation: blink .8s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        background: linear-gradient(135deg, #7dc000 0%, #e0c09d 100%);
+        color: black;
+    }
+
+    50% {
+        background: linear-gradient(135deg, #000000 0%, #8d8d8d 100%);
+        color: white;
+    }
+}
+
+.modal {
+    font-family: "Poetsen One", sans-serif !important;
+    font-weight: 400 !important;
+    font-style: normal;
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #f8f0e6;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    animation: explode 1s forwards, pulse 1.5s infinite;
+}
+
+@keyframes explode {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.modal-content p {
+    font-size: 30px;
+    color: #e0951b;
+    font-weight: bold;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
     cursor: pointer;
+}
+
+.black-pattern {
+    --u: 0.25vmin !important;
+    --c1: #2c2c2c !important;
+    /* Oscurecido pero no tanto */
+    --c2: #3d2a1f !important;
+    /* Oscurecido pero no tanto */
+    --c3: #302319 !important;
+    /* Oscurecido pero no tanto */
+    --c4: #1a1a1a !important;
+    /* Oscurecido pero no tanto */
+    --c5: #0a0a0a !important;
+    /* Oscurecido pero no tanto */
+    --gp: 50%/calc(var(--u) * 10) calc(var(--u) * 18) !important;
+
+    /* Añade superposición para oscurecer el patrón */
+    background:
+        /* Gradient oscurecido (menos oscuro) */
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        /* El patrón original */
+        conic-gradient(from 90deg at 99% 67%, var(--c5) 0 90deg, #fff0 0 360deg) var(--gp),
+        conic-gradient(from 180deg at 1% 67%, var(--c5) 0 90deg, #fff0 0 360deg) var(--gp),
+        conic-gradient(from 0deg at 99% 33%, var(--c5) 0 90deg, #fff0 0 360deg) var(--gp),
+        conic-gradient(from -90deg at 1% 33%, var(--c5) 0 90deg, #fff0 0 360deg) var(--gp),
+        conic-gradient(from -60deg at 50% 15.5%, var(--c3) 0 120deg, #fff0 0 360deg) var(--gp),
+        conic-gradient(from -60deg at 50% 16.75%, var(--c5) 0 120deg, #fff0 0 360deg) var(--gp),
+        conic-gradient(from 120deg at 50% 83.25%, var(--c5) 0 120deg, #fff0 0 360deg) var(--gp),
+        linear-gradient(32deg, #fff0 0 49.5%, var(--c5) 0 50.5%, #fff0 0 100%) var(--gp),
+        linear-gradient(-32deg, #fff0 0 49.5%, var(--c5) 0 50.5%, #fff0 0 100%) var(--gp),
+        linear-gradient(-90deg, #fff0 0 49%, var(--c5) 0 51%, #fff0 0 100%) var(--gp),
+        linear-gradient(60.5deg, #fff0 0 49.5%, var(--c5) 0 50.5%, #fff0 0 100%) var(--gp),
+        linear-gradient(-60.5deg, #fff0 0 49.5%, var(--c5) 0 50.5%, #fff0 0 100%) var(--gp),
+        conic-gradient(from -90deg at 50% 50%, var(--c5) 0 32deg, var(--c3) 0 60.5deg, var(--c4) 0 90deg, var(--c5) 0 119.5deg, var(--c1) 0 148deg, var(--c5) 0 180deg, #fff0 0 360deg) var(--gp),
+        conic-gradient(from 90deg at 50% 50%, var(--c2) 0 32deg, var(--c4) 0 60.5deg, var(--c3) 0 90deg, var(--c1) 0 119.5deg, var(--c5) 0 148deg, var(--c2) 0 180deg, #fff0 0 360deg) var(--gp) !important;
+    background-attachment: fixed !important;
+    position: relative;
+    overflow: auto;
 }
