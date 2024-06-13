@@ -13,11 +13,14 @@ body {
 h2 {
     font-family: "Poetsen One", sans-serif !important;
     font-weight: 400 !important;
+    background-color: rgba(31, 31, 31,0.2);
     font-style: normal;
     text-align: center;
+    text-shadow: 3px 3px 1px #000000; /* Desplazamiento en X, desplazamiento en Y, desenfoque y color */
     color: #ddb985;
     margin-bottom: 70px;
 }
+
 
 .roulette-container {
     position: relative;
@@ -71,6 +74,19 @@ img.logo {
     left: 135px;
     top: 125px;
     z-index: 1;
+}
+
+img.chica {
+    position: absolute;
+    top: 0px;
+    margin-left: 20px;
+    height: 105%;
+    z-index: -10;
+}
+
+#clearLocalStorage {
+    position: absolute;
+    bottom: 0;
 }
 
 .roulette div {
@@ -299,3 +315,4 @@ img.logo {
     position: relative;
     overflow: auto;
 }
+
