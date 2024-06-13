@@ -79,8 +79,8 @@ img.logo {
 img.chica {
     position: absolute;
     top: 0px;
-    margin-left: 20px;
-    height: 105%;
+    height: 95%;
+    width: 90%;
     z-index: -10;
 }
 
