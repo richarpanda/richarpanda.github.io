@@ -13,12 +13,14 @@ body {
 h2 {
     font-family: "Poetsen One", sans-serif !important;
     font-weight: 400 !important;
-    background-color: rgba(31, 31, 31,0.2);
+    background-color: rgba(31, 31, 31, 0.2);
     font-style: normal;
     text-align: center;
-    text-shadow: 3px 3px 1px #000000; /* Desplazamiento en X, desplazamiento en Y, desenfoque y color */
+    text-shadow: 3px 3px 1px #000000;
+    /* Desplazamiento en X, desplazamiento en Y, desenfoque y color */
     color: #ddb985;
     margin-bottom: 70px;
+    margin-top: -100px;
 }
 
 
@@ -79,8 +81,8 @@ img.logo {
 img.chica {
     position: absolute;
     top: 0px;
-    height: 95%;
-    width: 90%;
+    margin-left: 50px !important;
+    height: 100%;
     z-index: -10;
 }
 
@@ -213,7 +215,7 @@ img.chica {
     z-index: 100;
     left: 0;
     top: 0;
-    width: 100%;
+    width: 80%;
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.5);
@@ -316,3 +318,20 @@ img.chica {
     overflow: auto;
 }
 
+h1 {
+    position: absolute;
+    text-align: center;
+    font-family: "Itim";
+    font-style: normal;
+    font-weight: bold;
+    font-size: 45px;
+    color: #FFFFFF;
+    text-shadow: 3px 3px 1px #000000;
+    bottom: 0px;
+}
+
+h1 span {
+    display: block;
+    margin-top: -20px;
+    font-size: 60px;
+}
